@@ -12,6 +12,7 @@ public class HelloWorld{
             while ((character = reader.read()) != -1) {
                 System.out.print((char) character);
             }
+            System.out.println("Every thing is runnung fine");
             reader.close();
  
         } catch (IOException e) {
