@@ -1,13 +1,21 @@
-import java.util.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class HelloWorld{
   public static void main(String[] args){
-    Scanner sc = new Scanner(System.in);
-    int x , y , z;
-    System.out.println("Enter first number");
-    x = sc.nextInt();
-    System.out.println("Enter Second number");
-    y = sc.nextInt();
-    z = x + y;
-    System.out.println("The sum is :" + z);
+    try {
+            FileInputStream inputStream = new FileInputStream("MyFile.txt");
+            InputStreamReader reader = new InputStreamReader(inputStream, "UTF-16");
+            int character;
+ 
+            while ((character = reader.read()) != -1) {
+                System.out.print((char) character);
+            }
+            reader.close();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
   }
 }
